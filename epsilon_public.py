@@ -14,10 +14,10 @@ print (cwd)
 cwd = os.getcwd()
 data_path = cwd+'/Datasets/epsilon/epsilon_data.csv'
 label_path = cwd+'/Datasets/epsilon/epsilon_labels.csv'
-df = pd.read_csv(data_path, sep=',', header=None, chunksize=5500)
+df = pd.read_csv(data_path, sep=',', header=None, chunksize=55000)
 my_data = next(df)
 print (my_data.shape)
-df_labels = pd.read_csv(label_path, sep=',', header=None, chunksize=5500)
+df_labels = pd.read_csv(label_path, sep=',', header=None, chunksize=55000)
 labels = next(df_labels)
 y = labels.replace(-1, 0).squeeze()
 print (y.value_counts())
